@@ -17,6 +17,11 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    @GetMapping("/hi")
+    public ResponseEntity<String> getClientById() {
+        return ResponseEntity.ok("clientDTO");
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ClientDTO> getClientById(@PathVariable Long id) {
         ClientDTO clientDTO = clientService.getClientById(id);
